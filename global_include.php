@@ -28,7 +28,10 @@ include('Framework/BDD.php');
 include('Framework/Kernel.php');
 include('Framework/Ihm.php');
 
-
+//***********************
+//****     View      ****
+//***********************
+//include('View/menu.php')
 
 //***************************
 //**** Classe Controleur  ***

@@ -12,13 +12,13 @@ class Configuration {
     public static $DATABASE_HOST        = 'localhost';
 
     /* Nom de la database. */
-    public static $DATABASE_NAME        = 'astrocompare';
+    public static $DATABASE_NAME        = 'EasyCooking';
 
     /* Login de la database. */
     public static $DATABASE_LOGIN       = 'root';
 
     /* Password de la database. */
-    public static $DATABASE_PASSWORD    = '';
+    public static $DATABASE_PASSWORD    = 'root';
 
     /* Titre website. */
     public static $APPLICATION_TITLE    = 'Easy Cooking';
