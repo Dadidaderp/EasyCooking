@@ -111,7 +111,7 @@ class Element {
 			{
             $tabVal = array($valeur, $valeur2);
 
-            // On tri le tableau en d�croissant
+            // On tri le tableau en decroissant
             rsort($tabVal);
 
             //On calcul l'echelle qui entre les deux elements.

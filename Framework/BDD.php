@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Défi de la classe Base qui crée les liens vers la base de données
- * La classe sera appelée a  chaque fois qu'une donnée de la base de données sera nécessaire
+ * Definition de la classe Base qui cree les liens vers la base de donnees
+ * La classe sera appelle a chaque fois qu'une donnï¿½e de la base de donnees sera necessaire
  */
 class BDD {
 
@@ -10,7 +10,7 @@ class BDD {
     private static $bdd;
 
     private function __construct() {
-        //Créa liens bdd
+        //Creer liens bdd
         try {
             $pdo = new PDO(Configuration::$DATABASE_TYPE . ':host=' . Configuration::$DATABASE_HOST . ';dbname=' . Configuration::$DATABASE_NAME, Configuration::$DATABASE_LOGIN, Configuration::$DATABASE_PASSWORD);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -21,11 +21,11 @@ class BDD {
         }
     }
 
-    
-    
-    
+
+
+
     //retrourne instance de bdd
-    public static function getInstance() 
+    public static function getInstance()
     {
         if (is_null(self::$connect))
         {

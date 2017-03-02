@@ -3,28 +3,23 @@
 /**
  * Classe qui genere les view
  */
-Class Ihm {
-
+class Ihm
+{
     protected $contenu;
     protected $page;
 
-    // constr avec la page pass� en parametre depuis le controleur
+    // constr avec la page passe en parametre depuis le controleur
     public function __Construct($pageP)
     {
         $this->contenu = $pageP;
 
        // var_dump($page);
 
-        	if (isset($_GET['p']))
-        	{
-            $this->page = $_GET['p'];
-        	}
-
-
-       		 else
-        	{
-            $this->page = 'index';
-        	}
+            if (isset($_GET['p'])) {
+                $this->page = $_GET['p'];
+            } else {
+                $this->page = 'index';
+            }
     }
 
 
@@ -32,14 +27,13 @@ Class Ihm {
     public function genererIHM($donnees = array())
     {
 
-        // Rend les elem du tableau $donnees accessibles dans la vue
+        // Rend les elements du tableau $donnees accessibles dans la vue
         //transforeme la cle d'un array en variable
         //verifie nom de variable correcte
         extract($donnees);
        // var_dump($donnees);
         // contenu a recu la page , donc app de getPage  , include de la page
          include($this->getPage($this->contenu));
-
     }
 
 
@@ -49,6 +43,7 @@ Class Ihm {
     {
         // $file recoi l'adresse
         $file = 'View/' . $pageP;
+        echo "   file: $file";
         return $file;
     }
 
@@ -57,10 +52,7 @@ Class Ihm {
 
     public function getUrl($url)
     {
-        //Construction de l'URL  appel� dans les vues avec les infos de config
+        //Construction de l'URL  appel dans les vues avec les infos de config
         return Configuration::$APPLICATION_URL . $url;
     }
-
 }
-
-?>

@@ -21,7 +21,7 @@ class Configuration {
     public static $DATABASE_PASSWORD    = 'root';
 
     /* Titre website. */
-    public static $APPLICATION_TITLE    = 'Easy Cooking';
+    public static $APPLICATION_TITLE    = 'Easy-Cooking';
 
     /* URL  website. */
     public static $APPLICATION_URL      = 'http://127.0.0.1/AstroCompare/';

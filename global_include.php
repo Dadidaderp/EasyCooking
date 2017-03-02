@@ -31,7 +31,7 @@ include('Framework/Ihm.php');
 //***********************
 //****     View      ****
 //***********************
-//include('View/menu.php')
+include('View/menu.php');
 
 //***************************
 //**** Classe Controleur  ***
