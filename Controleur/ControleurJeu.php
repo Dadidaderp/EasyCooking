@@ -20,17 +20,17 @@ class ControleurJeu
 
 
 
-    /*
-     * FN choixCritere() -- consruit objet IHM avec en para la vue vue/choixCritere.php
-     * , puis app de sa fonc genererIHM
-     */
-     public function inscription()
-     {
-         $ihm = new Ihm('inscription.php');
+    public function inscription()
+    {
+        $ihm = new Ihm('inscription.php');
 
-         $ihm->genererIHM();
-     }
+        $ihm->genererIHM();
+    }
 
+     /*
+      * FN choixCritere() -- consruit objet IHM avec en para la vue vue/choixCritere.php
+      * , puis app de sa fonc genererIHM
+      */
     public function choixCritere()
     {
         $ihm = new Ihm('choixCritere.php');
