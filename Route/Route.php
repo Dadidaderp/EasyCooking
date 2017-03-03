@@ -23,6 +23,7 @@ class Route{
 
         //nameRoute, controle, methode
         $collection->add('index', 'ControleurJeu', 'index');
+        $collection->add('menu', 'ControleurJeu', 'menu');
         $collection->add('inscription', 'ControleurJeu', 'inscription');
         $collection->add('choix-critere', 'ControleurJeu', 'choixCritere');
         $collection->add('choix-element', 'ControleurJeu', 'choixElement');

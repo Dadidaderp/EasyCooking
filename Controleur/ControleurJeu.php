@@ -18,7 +18,11 @@ class ControleurJeu
         $ihm->genererIHM();
     }
 
+    public function menu() {
+      $ihm = new Ihm('menu.php');
 
+      $ihm->genererIHM();
+    }
 
     public function inscription()
     {
