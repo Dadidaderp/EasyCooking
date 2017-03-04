@@ -8,7 +8,6 @@ Class Utilisateur {
   private $nom;
   private $prenom;
   private $mail;
-  private $liste;
 
   public function __construct() {
 
