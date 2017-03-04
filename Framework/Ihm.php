@@ -43,16 +43,7 @@ class Ihm
     {
         // $file recoi l'adresse
         $file = 'View/' . $pageP;
-        echo "   file: $file";
         return $file;
     }
 
-
-
-
-    public function getUrl($url)
-    {
-        //Construction de l'URL  appel dans les vues avec les infos de config
-        return Configuration::$APPLICATION_URL . $url;
-    }
 }
