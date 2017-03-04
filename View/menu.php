@@ -25,7 +25,7 @@
         <li><a href="#">Proposer une recette</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="View/inscription.php"><span class="glyphicon glyphicon-user"></span> S'incrire</a></li>
+        <li><a href="?p=inscription"><span class="glyphicon glyphicon-user"></span> S'incrire</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Se connecter</a></li>
       </ul>
     </div>
