@@ -20,6 +20,25 @@
         }
         return $liste;
     }
+
+    /**
+    * retourne tout les type 
+    */
+    public static function getAll()
+    {
+        $db = BDD::getInstance();
+
+        $liste = array();
+        $sql = 'SELECT id FROM type';
+
+        $sth = $db->prepare($sql);
+        $sth->execute();
+        $rows = $sth->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as $row) {
+            $liste[] = new Type($row['id']);
+        }
+        return $liste;
+    }
 }
 
  ?>

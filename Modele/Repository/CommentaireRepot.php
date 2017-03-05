@@ -11,7 +11,7 @@
 
           $liste = array();
           // requete preparer
-          $sql = 'SELECT fk_utilisateur_id FROM commentaire WHERE fk_recette_id=?';
+          $sql = 'SELECT id FROM commentaire WHERE fk_recette_id=?';
 
           // preparation de la requete
           $sth = $db->prepare($sql);
@@ -19,7 +19,7 @@
           $sth->execute(array($id));
           $rows = $sth->fetchAll(PDO::FETCH_ASSOC);
           foreach ($rows as $row) {
-              $liste[] = new Commentaire($row['fk_utilisateur_id'], $id);
+              $liste[] = new Commentaire($row['id']);
           }
           return $liste;
       }
@@ -30,14 +30,13 @@
 
           $date = new Datetime();
           $user = unserialize($_SESSION['utilisateur']);
-//print_r($user->getId());exit;
-        // 1 = groupe utilisateur
-        // requete preparer
-        $sql = 'INSERT INTO commentaire VALUES(?, ?, ?, ?)';
+          // 1 = groupe utilisateur
+          // requete preparer
+          $sql = 'INSERT INTO commentaire VALUES(0, ?, ?, ?, ?)';
           // prepapration de la requete
           $sth = $db->prepare($sql);
           // execution de la requete 
-          $sth->execute(array($user->getId(), $recetteId, nl2br($commentaire), $date->format('Y-m-d h:i:s')));
+          $sth->execute(array(nl2br($commentaire), $date->format('Y-m-d h:i:s'), $user->getId(), $recetteId));
           return new Utilisateur($db->lastInsertId());
       }
   }

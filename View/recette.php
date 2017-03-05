@@ -12,16 +12,18 @@
 <body>
   <?php include('View/menu.php'); ?>
   <div class="container">
-
+<h1><?php echo $recette->getNom().'( Nb personne : '. $recette->getNb() . ')'; ?></h1>
+<?php if($recette->getImg()){ echo '<img src="'. $recette->getImg() .'" />'; } ?>
+<div><?php echo $recette->getDesc(); ?></div>
 <h2> Types Recette: </h2>
 <ul><?php foreach ($recette->getLstType() as $type) {
     echo "<li> ".$type->getNom()." </li>";
 } ?></ul>
-  <h3> Ingredient: </h3>
+  <h2> Ingredient: </h2>
   <ul><?php foreach ($recette->getLstIngredient() as $ingredient) {
     echo "<li> ".$ingredient->getQuantite().$ingredient->getUnite()." ".$ingredient->getIngredient()->getNom()." </li>";
 } ?></ul>
-    <h3> Commentaire: </h3>
+    <h2> Commentaire: </h2>
     <ul><?php foreach ($recette->getLstCommentaire() as $commentaire) {
     echo "<li> ".$commentaire->getCommentaire()." </li>";
 } ?></ul>

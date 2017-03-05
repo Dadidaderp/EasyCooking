@@ -8,7 +8,7 @@
 
           $liste = array();
         // 1 = groupe utilisateur
-        $sql = 'INSERT INTO utilisateur VALUES(0, ?, ?, ?, ?, ?, 1)';
+        $sql = 'INSERT INTO utilisateur VALUES(0, ?, ?, ?, ?, ?, 2)';
 
           $sth = $db->prepare($sql);
           $sth->execute(array($pseudo, sha1($password), $nom, $prenom, $mail));

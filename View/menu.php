@@ -15,11 +15,13 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Rechercher <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Par liste</a></li>
-            <li><a href="#">Par ingredient</a></li>
+            <li><a href="?p=recherche-liste">Par liste</a></li>
+            <li><a href="?p=recherche-ingredient">Par ingredient</a></li>
           </ul>
         </li>
-        <li><a href="#">Proposer une recette</a></li>
+        <?php if (isset($_SESSION['utilisateur'])) {
+          echo "<li><a href='?p=creation-recette'>Proposer une recette</a></li>";
+        } ?>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <?php if (isset($_SESSION['utilisateur'])) {

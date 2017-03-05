@@ -16,7 +16,7 @@ class ControleurCommentaire
                 $err = "erreur";
             } else {
                 $_SESSION['utilisateur'] = serialize($retour);
-                header('Location: ?p=recette&id='.$_POST['id']);
+                header('Location: ?p=fiche-recette&id='.$_POST['id']);
                 exit();
             }
         }

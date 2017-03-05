@@ -16,7 +16,7 @@ class Route{
 
 
     //toutes les routes dispo
-    // creation collection de Routes + add
+    // crea coll de Routes + add
     public static function getLesRoutes()
     {
         $collection = new RouteCollection();
@@ -29,6 +29,12 @@ class Route{
         $collection->add('fiche-recette', 'ControleurRecette', 'showRecette');
         $collection->add('commentaire', 'ControleurCommentaire', 'addCommentaire');
 
+        
+        $collection->add('recherche-ingredient', 'ControleurEasyCooking', 'recherche_ingredient');
+        $collection->add('recherche-liste', 'ControleurEasyCooking', 'recherche_liste');
+        $collection->add('creation-recette', 'ControleurRecette', 'creation');
+        $collection->add('validation-recette', 'ControleurRecette', 'validation');
+        
 
         return $collection;
     }

@@ -16,7 +16,7 @@
   echo $deco_msg;
 } ?>
     <h3>Bienvenue sur Easy Cooking</h3>
-    <p>Recherche de recette de cuisine via une sélection d'ingrédient.
+    <p>Rechercher de recette de cuisine par la sélection d'ingrédient.
     <p>Rapide et simple d'utilisation</p>
     <?php foreach($liste as $recette){
     echo '<h2> '.$recette->getNom().' </h2>';

@@ -7,18 +7,14 @@
 
       private $ingredient;
 
-      public function __construct($id)
+      public function __construct($id_recette, $id_ingradient)
       {
           $db = BDD::getInstance();
 
-          $sql = 'SELECT * FROM recette_ingredient WHERE fk_recette_id=?';
+          $sql = 'SELECT * FROM recette_ingredient WHERE fk_recette_id=? AND fk_ingredient_id=?';
 
-          /**
-            * Preparation de la requête
-            * et execution avec les paramètres
-            */
           $sth = $db->prepare($sql);
-          $sth->execute(array($id));
+          $sth->execute(array($id_recette, $id_ingradient));
           $row = $sth->fetch(PDO::FETCH_ASSOC);
           if ($row) {
               $this->quantite = $row['quantite'];

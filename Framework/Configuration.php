@@ -18,7 +18,7 @@ class Configuration {
     public static $DATABASE_LOGIN       = 'root';
 
     /* Password de la database. */
-    public static $DATABASE_PASSWORD    = 'root';
+    public static $DATABASE_PASSWORD    = '';
 
     /* Titre website. */
     public static $APPLICATION_TITLE    = 'Easy-Cooking';

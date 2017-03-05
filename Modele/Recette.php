@@ -20,17 +20,16 @@ class Recette
 
         $sql = 'SELECT * FROM recette WHERE id=?';
 
-        /**
-          * Preparation de la requête
-          * et execution avec les paramètres
-          */
         $sth = $db->prepare($sql);
         $sth->execute(array($id));
         $row = $sth->fetch(PDO::FETCH_ASSOC);
         if ($row) {
             $this->id = $row['id'];
             $this->nom = $row['nom'];
-            $this->description = $row['description'];
+            $this->desc = $row['description'];
+            $this->img = $row['image'];
+            $this->nb = $row['nbPersonne'];
+            $this->status = $row['status'];
             $this->utilisateur = new Utilisateur($row['fk_utilisateur_id']);
             $this->lstCommentaire = CommentaireRepot::getAllByIdRecette($row['id']);
             $this->lstIngredient = RecetteIngredientRepot::getAllByIdRecette($row['id']);
