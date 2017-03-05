@@ -20,8 +20,11 @@
           $db = BDD::getInstance();
 
           $liste = array();
+          // requete preparer
           $sql = 'SELECT id FROM utilisateur WHERE mail=? AND password=?';
+          // preparation de la requete
           $sth = $db->prepare($sql);
+          // execution de la requette avec les paramètres $email et $password crypte
           $sth->execute(array($email, sha1($password)));
           $row = $sth->fetch(PDO::FETCH_ASSOC);
           if ($row) {

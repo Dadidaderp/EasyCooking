@@ -10,9 +10,12 @@
           $db = BDD::getInstance();
 
           $liste = array();
+          // requete preparer
           $sql = 'SELECT fk_utilisateur_id FROM commentaire WHERE fk_recette_id=?';
 
+          // preparation de la requete
           $sth = $db->prepare($sql);
+          // execute la requete
           $sth->execute(array($id));
           $rows = $sth->fetchAll(PDO::FETCH_ASSOC);
           foreach ($rows as $row) {
@@ -29,8 +32,11 @@
           $user = unserialize($_SESSION['utilisateur']);
 //print_r($user->getId());exit;
         // 1 = groupe utilisateur
+        // requete preparer
         $sql = 'INSERT INTO commentaire VALUES(?, ?, ?, ?)';
+          // prepapration de la requete
           $sth = $db->prepare($sql);
+          // execution de la requete 
           $sth->execute(array($user->getId(), $recetteId, nl2br($commentaire), $date->format('Y-m-d h:i:s')));
           return new Utilisateur($db->lastInsertId());
       }

@@ -1,5 +1,8 @@
 <?php
 
+/**
+  * Controleur pour les recettes
+  */
 class ControleurRecette
 {
     public function showRecette()

@@ -10,8 +10,13 @@
   {
       $db = BDD::getInstance();
 
+      // Requete prépaprer
       $sql = 'SELECT * FROM commentaire WHERE fk_recette_id=? AND fk_utilisateur_id=?';
 
+      /**
+        * Preparation de la requête
+        * et execution avec les paramètres
+        */
       $sth = $db->prepare($sql);
       $sth->execute(array($idRecette, $idUtilisateur));
       $row = $sth->fetch(PDO::FETCH_ASSOC);

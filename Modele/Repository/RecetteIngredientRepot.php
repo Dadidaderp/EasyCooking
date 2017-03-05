@@ -10,9 +10,12 @@
         $db = BDD::getInstance();
 
         $liste = array();
+        // requete preparer
         $sql = 'SELECT fk_recette_id FROM recette_ingredient WHERE fk_recette_id=?';
 
+        //prepare la requete
         $sth = $db->prepare($sql);
+        // execute la requete
         $sth->execute(array($id));
         $rows = $sth->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $row) {

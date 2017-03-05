@@ -2,7 +2,7 @@
 
   class ControleurEasyCooking
   {
-      /*
+/**
  * app depuis Kernel si pas de P
  * N index() -- consruit objet IHM avec en para la vue vue/index.php , puis app de sa fonc genererIHM
  */

@@ -24,6 +24,6 @@ class Configuration {
     public static $APPLICATION_TITLE    = 'Easy-Cooking';
 
     /* URL  website. */
-    public static $APPLICATION_URL      = 'http://127.0.0.1/AstroCompare/';
+    public static $APPLICATION_URL      = 'http://127.0.0.1/EasyCooking/';
 }
 ?>
