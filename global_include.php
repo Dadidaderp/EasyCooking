@@ -1,6 +1,6 @@
 <?php
 
-//ini_set('display_errors', '1');
+ini_set('display_errors', '1');
 header('Content-Type: text/html; charset=utf-8');
 header('x-ua-compatible: ie=edge'); //int mode compa d'ie
 session_start();
@@ -22,13 +22,13 @@ include('Modele/Utilisateur.php');
 //****   REPOT MODELE     ***
 //***************************
 
-include('Modele/CommentaireRepot.php');
-include('Modele/GroupeRepot.php');
-include('Modele/IngredientRepot.php');
-include('Modele/RecetteRepot.php');
-include('Modele/RecetteIngredientRepot.php');
-include('Modele/TypeRepot.php');
-include('Modele/UtilisateurRepot.php');
+include('Modele/Repository/CommentaireRepot.php');
+include('Modele/Repository/GroupeRepot.php');
+include('Modele/Repository/IngredientRepot.php');
+include('Modele/Repository/RecetteRepot.php');
+include('Modele/Repository/RecetteIngredientRepot.php');
+include('Modele/Repository/TypeRepot.php');
+include('Modele/Repository/UtilisateurRepot.php');
 
 //***************************
 //**** Classe Routing     ***
@@ -45,16 +45,17 @@ include('Framework/BDD.php');
 include('Framework/Kernel.php');
 include('Framework/Ihm.php');
 
-//***********************
-//****     View      ****
-//***********************
-include('View/menu.php');
-
 //***************************
 //**** Classe Controleur  ***
 //***************************
 
-include('Controleur/ControleurJeu.php');
+include('Controleur/ControleurRecette.php');
+include('Controleur/ControleurUtilisateur.php');
+include('Controleur/ControleurEasyCooking.php');
+include('Controleur/ControleurCommentaire.php');
+
+
+
 
 
 

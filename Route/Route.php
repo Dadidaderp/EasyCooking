@@ -22,15 +22,13 @@ class Route{
         $collection = new RouteCollection();
 
         //nameRoute, controle, methode
-        $collection->add('index', 'ControleurJeu', 'index');
-        $collection->add('menu', 'ControleurJeu', 'menu');
-        $collection->add('inscription', 'ControleurJeu', 'inscription');
-        $collection->add('choix-critere', 'ControleurJeu', 'choixCritere');
-        $collection->add('choix-element', 'ControleurJeu', 'choixElement');
-        $collection->add('detail-element', 'ControleurJeu', 'detailElement');
-        $collection->add('detail-compare', 'ControleurJeu', 'comparer');
-        $collection->add('help', 'ControleurJeu', 'help');
-        $collection->add('test', 'ControleurJeu', 'limite');
+        $collection->add('index', 'ControleurEasyCooking', 'index');
+        $collection->add('inscription', 'ControleurUtilisateur', 'inscription');
+        $collection->add('connexion', 'ControleurUtilisateur', 'connexion');
+        $collection->add('deconnexion', 'ControleurUtilisateur', 'deconnexion');
+        $collection->add('fiche-recette', 'ControleurRecette', 'showRecette');
+        $collection->add('commentaire', 'ControleurCommentaire', 'addCommentaire');
+
 
         return $collection;
     }

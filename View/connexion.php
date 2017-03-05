@@ -12,23 +12,11 @@
 
 <body>
   <?php include("View/menu.php"); ?>
-  <h2>S'inscrire</h2>
-  <form action="?p=inscription" method="POST" id="formInscription">
+  <h2>Se connecter</h2>
+  <form action="?p=connexion" method="POST" id="formInscription">
     <?php if (isset($err)) {
     echo $err;
   } ?>
-    <div class="form-group">
-     <label for="exampleInputPseudo">Pseudo</label>
-     <input type="text" class="form-control" name="pseudo" id="exampleInputPseudo" placeholder="Pseudo">
-   </div>
-   <div class="form-group">
-    <label for="exampleInputNom1">Nom</label>
-    <input type="text" class="form-control" name="nom" id="exampleInputNom1" placeholder="Votre Nom">
-   </div>
-   <div class="form-group">
-    <label for="exampleInputPrenom1">Prenom</label>
-    <input type="text" class="form-control" name="prenom" id="exampleInputPrenom1" placeholder="Votre Prenom">
-   </div>
       <div class="form-group">
        <label for="exampleInputEmail1">Email address</label>
        <input type="email" class="form-control" name="mail" id="exampleInputEmail1" placeholder="Email">
@@ -37,7 +25,7 @@
        <label for="exampleInputPassword1">Password</label>
        <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
      </div>
-     <button type="submit" class="btn btn-default">Création</button>
+     <button type="submit" class="btn btn-default">Se connecter</button>
   </form>
 </body>
 </html>

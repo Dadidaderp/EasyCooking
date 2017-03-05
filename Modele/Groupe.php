@@ -13,10 +13,33 @@
 
           $sth = $db->prepare($sql);
           $sth->execute(array($id));
-          $row = $sth->fetchOne(PDO::FETCH_ASSOC);
+          $row = $sth->fetch(PDO::FETCH_ASSOC);
           if ($row) {
               $this->id = $row['id'];
-              $this->nom = $row['nom'];
+              $this->nom = $row['name'];
           }
+      }
+
+      /**
+      *  GETTER - SETTER
+      */
+      public function getId()
+      {
+          return $this->id;
+      }
+
+      public function getNom()
+      {
+          return $this->nom;
+      }
+
+      public function setId($id)
+      {
+          $this->desc = $id;
+      }
+
+      public function setNom($nom)
+      {
+          $this->nom = $nom;
       }
   }
