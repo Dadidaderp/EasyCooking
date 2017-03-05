@@ -17,11 +17,11 @@
 <ul><?php foreach ($recette->getLstType() as $type) {
     echo "<li> ".$type->getNom()." </li>";
 } ?></ul>
-  <h2> Ingredient: </h2>
+  <h3> Ingredient: </h3>
   <ul><?php foreach ($recette->getLstIngredient() as $ingredient) {
     echo "<li> ".$ingredient->getQuantite().$ingredient->getUnite()." ".$ingredient->getIngredient()->getNom()." </li>";
 } ?></ul>
-    <h2> Commentaire: </h2>
+    <h3> Commentaire: </h3>
     <ul><?php foreach ($recette->getLstCommentaire() as $commentaire) {
     echo "<li> ".$commentaire->getCommentaire()." </li>";
 } ?></ul>

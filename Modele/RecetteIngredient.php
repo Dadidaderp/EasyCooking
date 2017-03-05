@@ -13,6 +13,10 @@
 
           $sql = 'SELECT * FROM recette_ingredient WHERE fk_recette_id=?';
 
+          /**
+            * Preparation de la requête
+            * et execution avec les paramètres
+            */
           $sth = $db->prepare($sql);
           $sth->execute(array($id));
           $row = $sth->fetch(PDO::FETCH_ASSOC);

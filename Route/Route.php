@@ -16,7 +16,7 @@ class Route{
 
 
     //toutes les routes dispo
-    // crea coll de Routes + add
+    // creation collection de Routes + add
     public static function getLesRoutes()
     {
         $collection = new RouteCollection();
