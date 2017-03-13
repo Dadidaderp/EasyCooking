@@ -13,7 +13,7 @@
 
           /**
             * Preparation de la requête
-            * et execution avec les paramètres
+             * et execution avec les paramètres
             */
           $sth = $db->prepare($sql);
           $sth->execute(array($id));
