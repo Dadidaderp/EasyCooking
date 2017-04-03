@@ -1,9 +1,8 @@
 <?php
 
 
-Class Kernel {
-
-
+class Kernel
+{
     protected $contenu; // qui recevra name route
 
     protected $lesRoutes; // recoit la liste de route
@@ -25,8 +24,8 @@ Class Kernel {
 
     public function run()
     {
-    	// info recoit la route select
-    	// un array 'controleur'=> ControleurJeu & 'action' => l'action recu depuis la liste
+        // info recoit la route select
+        // un array 'controleur'=> ControleurJeu & 'action' => l'action recu depuis la liste
         $info = $this->lesRoutes->getRoute($this->contenu);
         //var_dump($info);
 
@@ -40,7 +39,6 @@ Class Kernel {
         $controleur->{$info['action'] }();
 
        //var_dump($info['action']);
-
     }
 
 
@@ -49,23 +47,17 @@ Class Kernel {
     /*
      * initialisation de la page
      */
-    public function initPageCourant() {
+    public function initPageCourant()
+    {
 
 
-    	//si y'a un P on le recup
-    	if (isset($_GET['p']))
-    	{
-    		$this->contenu =  $_GET['p'];
-
-    	}
-
-    	else
-    	{
-    		//sinon index
-    		$this->contenu = 'index';
-    	}
-
-
+        //si y'a un P on le recup
+        if (isset($_GET['p'])) {
+            $this->contenu =  $_GET['p'];
+        } else {
+            //sinon index
+            $this->contenu = 'index';
+        }
     }
 
 
@@ -73,7 +65,4 @@ Class Kernel {
     {
         return $this->contenu;
     }
-
 }
-
-?>

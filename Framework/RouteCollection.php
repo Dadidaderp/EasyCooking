@@ -3,8 +3,8 @@
 /**
  * Class qui gere l'ensemble des Routes du site Web
  */
-class RouteCollection {
-
+class RouteCollection
+{
     protected $routes = array();
 
 
@@ -20,16 +20,14 @@ class RouteCollection {
 
     public function getRoute($name)
     {
-            return $this->routes[$name];
+        return $this->routes[$name];
     }
 
 
 
 
-    public function all() {
+    public function all()
+    {
         return $this->routes;
     }
-
 }
-
-?>

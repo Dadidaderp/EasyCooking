@@ -35,7 +35,7 @@
           $sql = 'INSERT INTO commentaire VALUES(0, ?, ?, ?, ?)';
           // prepapration de la requete
           $sth = $db->prepare($sql);
-          // execution de la requete 
+          // execution de la requete
           $sth->execute(array(nl2br($commentaire), $date->format('Y-m-d h:i:s'), $user->getId(), $recetteId));
           return new Utilisateur($db->lastInsertId());
       }

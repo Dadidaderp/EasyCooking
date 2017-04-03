@@ -45,5 +45,4 @@ class Ihm
         $file = 'View/' . $pageP;
         return $file;
     }
-
 }

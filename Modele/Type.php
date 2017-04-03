@@ -1,24 +1,24 @@
 <?php
 
-  class Type {
-
-  private $id;
-  private $nom;
-
-  public function __construct($id)
+  class Type
   {
-      $db = BDD::getInstance();
+      private $id;
+      private $nom;
 
-      $sql = 'SELECT * FROM type WHERE id=?';
+      public function __construct($id)
+      {
+          $db = BDD::getInstance();
 
-      $sth = $db->prepare($sql);
-      $sth->execute(array($id));
-      $row = $sth->fetch(PDO::FETCH_ASSOC);
-      if ($row) {
-          $this->id = $row['id'];
-          $this->nom = $row['nom'];
+          $sql = 'SELECT * FROM type WHERE id=?';
+
+          $sth = $db->prepare($sql);
+          $sth->execute(array($id));
+          $row = $sth->fetch(PDO::FETCH_ASSOC);
+          if ($row) {
+              $this->id = $row['id'];
+              $this->nom = $row['nom'];
+          }
       }
-  }
 
   /**
   *  GETTER - SETTER
@@ -28,21 +28,18 @@
       return $this->id;
   }
 
-  public function getNom()
-  {
-      return $this->nom;
+      public function getNom()
+      {
+          return $this->nom;
+      }
+
+      public function setId($id)
+      {
+          $this->desc = $id;
+      }
+
+      public function setNom($nom)
+      {
+          $this->nom = $nom;
+      }
   }
-
-  public function setId($id)
-  {
-      $this->desc = $id;
-  }
-
-  public function setNom($nom)
-  {
-      $this->nom = $nom;
-  }
-
-}
-
- ?>
