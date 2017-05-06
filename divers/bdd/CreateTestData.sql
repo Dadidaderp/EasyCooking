@@ -23,32 +23,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `commentaire`
---
-DROP TABLE IF EXISTS `EasyCooking`.`commentaire` ;
-
-CREATE TABLE IF NOT EXISTS `EasyCooking`.`commentaire` (
-  `id` INT(50) NOT NULL AUTO_INCREMENT,
-  `commentaire` TEXT NULL,
-  `date` DATETIME NULL,
-  `fk_utilisateur_id` INT(50) NOT NULL,
-  `fk_recette_id` INT(50) NOT NULL,
-  INDEX `fk_utilisateur_has_recette_recette1_idx` (`fk_recette_id` ASC),
-  INDEX `fk_utilisateur_has_recette_utilisateur_idx` (`fk_utilisateur_id` ASC),
-  PRIMARY KEY (`id`),
-  CONSTRAINT `fk_utilisateur_has_recette_utilisateur`
-    FOREIGN KEY (`fk_utilisateur_id`)
-    REFERENCES `EasyCooking`.`utilisateur` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_utilisateur_has_recette_recette1`
-    FOREIGN KEY (`fk_recette_id`)
-    REFERENCES `EasyCooking`.`recette` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
---
 -- Structure de la table `groupe`
 --
 
@@ -194,9 +168,9 @@ CREATE TABLE IF NOT EXISTS `recette` (
 --
 
 INSERT INTO `recette` (`id`, `nom`, `description`, `image`, `nbPersonne`, `status`, `fk_utilisateur_id`) VALUES
-(1, 'Remoulade d''ecargot', 'comme le faisait mon grand père', NULL, 4, 1, 1),
+(1, 'Sauce Tomate', 'une recette classique', NULL, 4, 1, 1),
 (2, 'Paupiette de veau', 'savoureuse à l''ancienne', NULL, 2, 1, 2),
-(3, 'Moules a la toulousaine', 'une bonne valise de moules quoi', NULL, 1, 1, 2);
+(3, 'Moules Frites', 'le traditionelle plat moules frites', NULL, 1, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -293,10 +267,10 @@ INSERT INTO `utilisateur` (`id`, `pseudo`, `password`, `nom`, `prenom`, `mail`, 
 
 --
 -- Contraintes pour la table `commentaire`
---
-ALTER TABLE `commentaire`
+
+ ALTER TABLE `commentaire`
   ADD CONSTRAINT `fk_utilisateur_has_recette_utilisateur` FOREIGN KEY (`fk_utilisateur_id`) REFERENCES `utilisateur` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_utilisateur_has_recette_recette1` FOREIGN KEY (`fk_recette_id`) REFERENCES `recette` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ ADD CONSTRAINT `fk_utilisateur_has_recette_recette1` FOREIGN KEY (`fk_recette_id`) REFERENCES `recette` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `recette`
